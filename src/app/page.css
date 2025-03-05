@@ -1,0 +1,33 @@
+/* 页面的主容器 */
+.home-page {
+  padding: 20px;
+}
+
+/* 页头样式 */
+.home-page .page-header {
+  margin-bottom: 40px; /* 页头与内容之间的间距 */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 居中对齐 */
+  justify-content: center;
+}
+
+/* 大标题样式 */
+.home-page .page-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+
+/* 简短介绍文字样式 */
+.home-page .page-description {
+  font-size: 1.2rem;
+  color: #666;
+  margin: 0 auto;
+  margin: 0 auto; /* 使文字居中 */
+  white-space: nowrap; /* 防止文字换行 */
+  overflow: hidden; /* 超出部分隐藏 */
+  text-overflow: ellipsis; /* 显示省略号 */
+}

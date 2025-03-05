@@ -1,0 +1,116 @@
+.editor-page {
+  padding: 0px;
+}
+
+.editor-page h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.editor-page .actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.editor-page .actions .p-button-rounded {
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.editor-page .resource-table .p-datatable {
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.editor-page .resource-table .p-datatable-thead > tr > th {
+  color: black;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.editor-page .resource-table .p-datatable-tbody > tr:hover {
+  background-color: #f0f0f0;
+}
+
+.editor-page .resource-table .p-inputtext {
+  width: 100%;
+  padding: 0.4rem 0.6rem;
+}
+
+.editor-page .resource-table .source-key-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.editor-page .resource-table .source-text {
+  font-size: 15px; /* 调整 Source 字段的字体大小 */
+  font-weight: normal; /* 可根据需要调整字体粗细 */
+  margin-bottom: 4px; /* 为上下行之间增加一点间距 */
+}
+
+.editor-page .resource-table .key-text {
+  font-size: 13px; /* 调整 Key 字段的字体大小 */
+  color: #777; /* 给 Key 字段一个较淡的颜色 */
+}
+
+.list-dialog .p-dialog-header {
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #ccc;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 15px; /* 增加头部的内边距 */
+}
+
+.list-dialog .p-datatable {
+  font-size: 1rem;
+}
+
+.list-dialog .p-datatable .p-datatable-tbody > tr {
+  margin-bottom: 8px; /* 增加每一行之间的间距 */
+}
+
+.list-dialog .p-datatable .p-datatable-tbody > tr > td {
+  padding: 10px 10px; /* 增加单元格内的垂直间距 */
+}
+
+.list-dialog .p-datatable .p-datatable-tbody > tr > td:first-child {
+  text-align: left; /* 第一列文字左对齐 */
+}
+
+.list-dialog .p-datatable .p-datatable-tbody > tr > td:last-child {
+  display: flex; /* 使用 flex 布局 */
+  justify-content: flex-end; /* 将按钮推到右边 */
+  align-items: center; /* 垂直居中按钮 */
+}
+
+.list-dialog .p-button-rounded {
+  font-size: 1rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+/* 面包屑样式 */
+.editor-page .p-breadcrumb {
+  background-color: transparent;
+  margin-bottom: 20px; /* 上下间距调整 */
+}
+
+/* 面包屑链接样式 */
+.editor-page .p-breadcrumb .p-menuitem-link {
+  font-size: 1.2rem; /* 适应项目标题的字体大小 */
+  font-weight: bold;
+  color: #333; /* 文字颜色 */
+}
+
+/* 面包屑链接 hover 样式 */
+.editor-page .p-breadcrumb .p-menuitem-link:hover {
+  text-decoration: underline; /* 鼠标悬停下划线效果 */
+}
+
+/* Tab 内容区域 */
+.editor-page .p-tabview .p-tabview-panels {
+  padding-top: 20px;
+  padding-bottom: 40px;
+}

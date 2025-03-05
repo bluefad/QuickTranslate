@@ -1,0 +1,97 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Project 表
+model Project {
+  id               String   @id @default(uuid()) // 项目ID
+  name             String // 项目名称
+  identifier       String   @unique // 项目标识符，保证全局唯一
+  description      String? // 项目描述
+  sourceLanguageId String // 基准语言（外键）
+  createdAt        DateTime @default(now()) // 创建时间
+  updatedAt        DateTime @updatedAt // 更新时间
+
+  modules          Module[] // 项目下的所有模块
+  sourceLanguage   Language           @relation("SourceLanguage", fields: [sourceLanguageId], references: [id]) // 外键关联 Language 表
+  projectLanguages ProjectLanguages[] // 显式定义 Project 和 Language 的多对多关系
+}
+
+// Language 表
+model Language {
+  id                     String   @id @unique // 唯一标识符，使用 UUID 或其他唯一值
+  name                   String // 语言名称（如 "French", "German" 等）
+  code                   String // 语言代码（通常是 ISO 639-1 或 ISO 639-3）
+  internal_code          String // 内部语言代码，可能用于内部系统标识
+  two_letters_code       String // 两位字母的语言代码（如 "en", "fr", "de"）
+  three_letters_code     String // 三位字母的语言代码（如 "eng", "fra", "deu"）
+  popularity             String // 语言的流行度（可能是数值或分类，例如 "high", "medium", "low"）
+  dialect_of             String? // 方言，可能为空（指明该语言是否是某个方言的变体）
+  organization_id        String? // 组织 ID（可为空，用于关联语言所属的组织）
+  plural_category_names  String[] // 复数类别名称（例如，"one", "other", "few" 等，适用于复数化规则）
+  language               String // 语言名称的本地化版本（可能用于显示）
+  locale                 String // 区域设置（例如，"en_US", "fr_FR"）
+  locale_with_underscore String // 区域设置，使用下划线（例如，"en_US", "fr_FR"）
+  android_code           String // Android 系统使用的语言代码（例如，"en", "fr"）
+  osx_code               String // macOS 使用的语言代码（例如，"en", "fr"）
+  osx_locale             String // macOS 使用的区域设置（例如，"en_US", "fr_FR"）
+
+  languageResources LanguageResource[]
+  projectLanguages  ProjectLanguages[]
+
+  projectsSource Project[] @relation("SourceLanguage")
+}
+
+// ProjectLanguages 表（用于表示 Project 和 Language 的多对多关系）
+model ProjectLanguages {
+  projectId  String // 外键，关联 Project 表
+  languageId String // 外键，关联 Language 表
+  order      Int // 目标语言的排序字段
+
+  project  Project  @relation(fields: [projectId], references: [id])
+  language Language @relation(fields: [languageId], references: [id])
+
+  @@id([projectId, languageId]) // 联合主键
+  @@map("ProjectLanguages") // 显式指定中间表的名称
+}
+
+// Module 表
+model Module {
+  id          String   @id @default(uuid()) // 模块ID
+  name        String // 模块名称
+  description String? // 模块描述
+  projectId   String // 项目的ID（外键）
+  createdAt   DateTime @default(now()) // 创建时间
+  updatedAt   DateTime @updatedAt // 更新时间
+  project     Project  @relation(fields: [projectId], references: [id]) // 外键关联 Project 表
+
+  languageResources LanguageResource[] // Add the relation to LanguageResource
+}
+
+// LanguageResource 表
+model LanguageResource {
+  id         String   @id @default(uuid()) // 语言资源ID
+  moduleId   String // 外键关联 Module 表
+  key        String // 语言资源的键（如 "pageTitle"）
+  value      String // 语言资源的值（如 "Users | {{appName}}"）
+  languageId String // 外键，关联 Language 表
+  order      Int // 排序字段，记录资源在文件中的顺序
+  createdAt  DateTime @default(now()) // 创建时间
+  updatedAt  DateTime @updatedAt // 更新时间
+
+  language Language @relation(fields: [languageId], references: [id]) // 通过外键关联 Language 表
+  module   Module   @relation(fields: [moduleId], references: [id])
+
+  @@unique([moduleId, languageId, key])
+}

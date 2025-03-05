@@ -1,0 +1,40 @@
+.project-list {
+  display: flex;
+  flex-wrap: wrap; /* 使卡片可以换行 */
+  justify-content: space-around; /* 使卡片在一行内对齐 */
+  gap: 20px; /* 设置卡片之间的间距 */
+  padding: 20px;
+}
+
+/* 添加项目卡片的样式 */
+.add-project-card {
+  width: 100%;
+  max-width: 500px;
+  min-width: 320px;
+  margin: 20px;
+  border-radius: 12px; /* 更大的圆角 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+  background-color: #ffffff; /* 卡片背景颜色 */
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-project-card .p-card-title {
+  font-size: 26px;
+  font-weight: bold;
+  color: #333;
+}
+
+.add-project-card .p-card-subtitle {
+  font-size: 18px;
+  color: #777;
+}
+
+.add-project-card .p-button-rounded {
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}

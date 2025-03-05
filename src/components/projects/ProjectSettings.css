@@ -1,0 +1,37 @@
+/* 项目列表样式 */
+.project-settings {
+  padding: 0px;
+}
+
+/* 表单内容区域 */
+.project-settings .form-group {
+  margin-bottom: 12px;
+}
+
+.project-settings .form-group label {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.project-settings .form-group .p-inputtext,
+.project-settings .form-group .p-inputtextarea {
+  width: 100%;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.project-settings .form-actions .p-button-rounded {
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+/* 按钮组 */
+.project-settings .form-actions {
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px;
+}

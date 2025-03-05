@@ -1,0 +1,121 @@
+/* 项目卡片 */
+.project-card {
+  width: 100%;
+  max-width: 500px;
+  min-width: 320px;
+  margin: 20px;
+  border-radius: 16px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  padding: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* 鼠标悬停时效果 */
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* 项目的首字母圆形样式 */
+.project-card-initials {
+  position: absolute;
+  top: 40px; /* 上偏移量 */
+  left: 50px; /* 左偏移量 */
+  width: 60px; /* 圆形的宽度 */
+  height: 60px; /* 圆形的高度 */
+  color: white; /* 字体颜色 */
+  font-size: 24px; /* 字体大小 */
+  font-weight: bold;
+  border-radius: 50%; /* 圆形 */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* 使字母居中 */
+}
+
+/* 项目标题 */
+.project-card .p-card-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-left: 90px; /* 留出空间给圆形 */
+}
+
+/* 项目副标题（源语言） */
+.project-card .p-card-subtitle {
+  font-size: 16px;
+  color: #999;
+  margin-top: 4px;
+  margin-left: 90px; /* 留出空间给圆形 */
+}
+
+/* 项目内容 */
+.project-card .p-card-content {
+  padding: 0px;
+  margin-left: 90px; /* 留出空间给圆形 */
+}
+
+/* 项目描述样式 */
+.project-card .project-description {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+  margin-top: 12px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-bottom: 12px; /* 调整底部间距，使其更整齐 */
+}
+
+/* 标签容器样式 */
+.project-card .project-tags {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 24px; /* 标签与描述之间的间距 */
+  flex-wrap: nowrap; /* 防止换行 */
+}
+
+/* Tag 样式 */
+.project-card .project-tags .p-tag {
+  font-size: 12px;
+  padding: 0.5rem 1rem;
+  border-radius: 20px; /* 圆角 */
+  background-color: #dcdcdc; /* 浅灰色背景色 */
+  color: #666; /* 深灰色文本颜色 */
+}
+
+/* 图标样式 */
+.project-card .project-tag .pi,
+.project-card .project-tag svg {
+  margin-right: 8px;
+}
+
+/* 按钮容器样式 */
+.project-card .project-card-footer {
+  display: flex;
+  justify-content: space-between; /* 保证按钮水平分布 */
+  margin-top: 10px;
+  gap: 10px;
+  flex-wrap: nowrap; /* 防止换行 */
+  align-items: center; /* 保证按钮垂直居中 */
+}
+
+/* 按钮样式 */
+.project-card .project-card-footer .p-button-rounded {
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  flex-grow: 1; /* 使按钮在可用空间中尽量变宽 */
+}
+
+/* 控制每个按钮之间的间距和大小 */
+.project-card .project-card-footer .p-button-rounded:not(:last-child) {
+  margin-right: 10px; /* 给按钮之间添加间距 */
+}

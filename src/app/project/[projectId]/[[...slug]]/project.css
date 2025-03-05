@@ -1,0 +1,58 @@
+/* 整体页面容器 */
+.project-page {
+  padding: 0px;
+}
+
+/* 面包屑样式 */
+.project-page .p-breadcrumb {
+  background-color: transparent;
+  margin-bottom: 20px; /* 上下间距调整 */
+}
+
+/* 面包屑链接样式 */
+.project-page .p-breadcrumb .p-menuitem-link {
+  font-size: 1.2rem; /* 适应项目标题的字体大小 */
+  font-weight: bold;
+  color: #333; /* 文字颜色 */
+}
+
+/* 面包屑链接 hover 样式 */
+.project-page .p-breadcrumb .p-menuitem-link:hover {
+  text-decoration: underline; /* 鼠标悬停下划线效果 */
+}
+
+/* 调整 TabView 的 Tab header 样式 */
+.project-page .p-tabview .p-tabview-nav {
+  padding-top: 0px; /* 更小的顶部内边距 */
+  padding-bottom: 1px; /* 更小的底部内边距 */
+}
+
+/* Tab header 中的每个 TabPanel 样式 */
+.project-page .p-tabview .p-tabview-nav .p-tabview-nav-link {
+  font-size: 1rem; /* 调整 Tab 名称字体大小 */
+  padding-left: 20px; /* 左右内边距 */
+  padding-right: 20px; /* 左右内边距 */
+  padding-top: 20px; /* 上内边距 */
+  padding-bottom: 20px; /* 下内边距 */
+}
+
+/* Tab 内容区域 */
+.project-page .p-tabview .p-tabview-panels {
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+/* 调整嵌套的 TabView 的 Tab header 样式 */
+.project-page .p-tabview .p-tabview .p-tabview-nav {
+  padding-top: 0px; /* 更小的顶部内边距 */
+  padding-bottom: 1px; /* 更小的底部内边距 */
+}
+
+/* 嵌套 TabView 中的每个 TabPanel 样式 */
+.project-page .p-tabview .p-tabview .p-tabview-nav .p-tabview-nav-link {
+  font-size: 0.9rem; /* 更小的字体 */
+  padding-left: 20px; /* 左右内边距 */
+  padding-right: 20px; /* 左右内边距 */
+  padding-top: 8px; /* 更小的内边距 */
+  padding-bottom: 16px; /* 更小的内边距 */
+}

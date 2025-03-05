@@ -1,0 +1,3 @@
+# Build artifacts (Next.js and Node.js projects)
+.next/
+dist/

@@ -1,0 +1,52 @@
+.language-resources {
+  padding: 0px;
+}
+
+.language-resources .module-selector {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.language-resources .module-dropdown {
+  width: 250px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.language-resources .actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.language-resources .actions .p-button {
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+}
+
+.language-resources .actions .p-button-rounded {
+  border-radius: 50px;
+}
+
+.language-resources .resource-table .p-datatable {
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.language-resources .resource-table .p-datatable-thead > tr > th {
+  color: black;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.language-resources .resource-table .p-datatable-tbody > tr:hover {
+  background-color: #f0f0f0;
+}
+
+.language-resources .resource-table .p-inputtext {
+  width: 100%;
+  padding: 0.4rem 0.6rem;
+}
